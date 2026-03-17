@@ -10,7 +10,7 @@ class BasePage:
         if self.url:
             self.page.goto(self.url)
         else:
-            raise 'url не указан'
+            raise Exception('url не указан')
 
     def fill(self, locator, data:str):
         self.page.locator(locator).fill(data)

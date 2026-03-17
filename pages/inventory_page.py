@@ -1,6 +1,6 @@
 from pages.base_page import BasePage
 from locators.inventory_locators import InventoryLocators
-
+import re
 
 class InventoryPage(BasePage):
     url = 'https://www.saucedemo.com/inventory.html'
