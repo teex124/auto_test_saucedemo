@@ -1,17 +1,12 @@
 from pages.base_page import BasePage
+from locators.login_locators import LoginLocators
+from utilits.test_data import TestData
 
-
-LOGIN = 'standard_user'
-PASSWORD = 'secret_sauce'
-
-LOGIN_INPUT = '#user-name'
-PASSWORD_INPUT = '#password'
-LOGIN_BUTTON = '#login-button'
 
 class LoginPage(BasePage):
     url = 'https://www.saucedemo.com/'
     def login(self):
-        self.page.locator(LOGIN_INPUT).fill(LOGIN)
-        self.page.locator(PASSWORD_INPUT).fill(PASSWORD)
-        self.page.locator(LOGIN_BUTTON).click()
+        self.fill(LoginLocators.LOGIN_INPUT, TestData.LOGIN)
+        self.fill(LoginLocators.PASSWORD_INPUT, TestData.PASSWORD)
+        self.click(LoginLocators.LOGIN_BUTTON)
 
